@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hrithik86/chatApp#readme",
   "dependencies": {
+    "bower": "^1.8.4",
     "express": "^4.16.4",
     "pug": "^2.0.3",
     "socket.io": "^2.2.0"

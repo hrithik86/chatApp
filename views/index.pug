@@ -1,0 +1,38 @@
+doctype html
+head
+    title Real time chat
+    link(rel="stylesheet",href="/css/style.css")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u",crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js",integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa",crossorigin="anonymous")
+    script(src="/js/main.js")
+    script(src="/socket.io/socket.io.js")
+body
+  nav.navbar.navbar-inverse
+    .container
+      .navbar-header
+      a.navbar-brand(href="/") eChat
+  .container
+    .row
+      .col-md-8
+        #error
+        #userFormWrap
+          h1 Create Username
+          form#userForm
+            input#username.form-control(type="text", placeholder="Enter Username...")
+            br
+            button.btn.btn-default(type="submit") Submit
+        #mainWrap
+          h1 Speak Your Mind
+          form#chatForm
+            .form-group
+              textarea#chatInput.form-control(name="body", placeholder="Say Something...")
+              br
+              button.btn.btn-default(type="submit") Submit
+              br
+              br
+      .col-md-4
+        h3 Chat Users
+        ul.list-group
+          #users
+    

@@ -21,7 +21,16 @@ $(document).ready(function(){
       });
       e.preventDefault();
     });
-  
+
+chatForm.on("submit",function(e){
+socket.emit("send message",message.val());
+message.val("");
+e.preventDefault();
+});
+
+socket.on("show message",function(data){
+chatWindow.append('<strong>'+data.user+'</strong>:' +data.msg +'<br>');
+})
     // Display Usernames
     socket.on('users', function(data){
       let html = '';
